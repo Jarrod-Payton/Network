@@ -1,6 +1,16 @@
 <template>
   <div class="container">
-    <Posts />
+    <div class="row">
+      <div class="col-8">
+        <Search />
+        <CreatePost />
+        <Posts />
+      </div>
+      <div class="col-4">
+        <Extra />
+        <Extra />
+      </div>
+    </div>
   </div>
 </template>
 
