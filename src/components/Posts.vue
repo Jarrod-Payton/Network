@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-12" v-for="p in Posts" :key="p.id">
-      <div class="card m-1">
+      <div class="card m-1 elevation-2">
         <div class="card-title px-3 pt-3">
           <div class="d-flex justify-content-between">
             <h5>

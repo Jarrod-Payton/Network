@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 mt-3" v-for="e in Extras" :key="e">
       <router-link :to="{ name: 'Extras' }">
-        <img class="selectable" :src="e.tall" alt="Extras Page" />
+        <img class="selectable elevation-2" :src="e.tall" alt="Extras Page" />
       </router-link>
     </div>
   </div>

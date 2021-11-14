@@ -2,7 +2,7 @@
   <div class="row mt-2 p-2">
     <div class="col-md-3"></div>
     <div class="col-md-6 text-center">
-      <form @submit.prevent="search" class="input-group">
+      <form @submit.prevent="search" class="input-group elevation-2">
         <!-- NOTE keypress submits on each keypress, ideally you don't want both of these on your search bar but can be helpful -->
         <input
           @submit="search"

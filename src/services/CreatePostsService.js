@@ -2,8 +2,8 @@ import { logger } from "../utils/Logger"
 import { api } from "./AxiosService"
 
 class CreatePostsService {
-  async CreatePost(body) {
-    logger.log('Hello')
+  async createPost(body) {
+    logger.log(body)
   }
 }
 
