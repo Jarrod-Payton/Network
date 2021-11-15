@@ -13,42 +13,64 @@
               -
               {{ p.creator.name }}
             </h5>
-            <i
-              class="mdi mdi-dump-truck btn text-red"
-              @click="Delete"
-              v-if="p.creatorId === Account.id"
-            />
-            <span v-if="p.creatorId !== Account.id" d-flex>
-              <i class="mdi mdi-cards-heart btn" />
-            </span>
+            <div class="text-center">
+              <span v-if="p.creatorId !== Account.id">
+                <i
+                  class="mdi mdi-cards-heart btn"
+                  v-if="user.isAuthenticated"
+                  @click="likePost(p)"
+                />
+              </span>
+              <i
+                class="mdi mdi-dump-truck btn text-red"
+                @click="Delete(p.id)"
+                v-if="p.creatorId === Account.id"
+              />
+              <h6 v-if="p.creatorId === Account.id">likes received</h6>
+              <h6>{{ p.likes.length }}</h6>
+            </div>
           </div>
         </div>
         <div class="card-body px-4 pb-4">
           <h8>{{ p.body }}</h8>
+          <img :src="p.imgUrl" alt="image" v-if="p.imgUrl" class="pimg p-2" />
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { computed } from "@vue/reactivity";
+import { computed, ref } from "@vue/reactivity";
 import { AppState } from "../AppState";
 import { onMounted } from "@vue/runtime-core";
 import { postsService } from "../services/PostsService";
 import { logger } from "../utils/Logger";
+import Pop from "../utils/Pop";
 export default {
   setup() {
     onMounted(async () => {
       postsService.getAll();
     });
     return {
-      async Delete() {
+      async likePost(post) {
         try {
-          logger.log("hello");
+          postsService.likePost(post);
         } catch (error) {
           logger.error(error);
         }
       },
+      async Delete(postId) {
+        if (window.confirm("Are you sure you want to delte this?")) {
+          try {
+            postsService.deletePost(postId);
+          } catch (error) {
+            logger.error(error);
+          }
+        } else {
+          return;
+        }
+      },
+      user: computed(() => AppState.user),
       Account: computed(() => AppState.account),
       Posts: computed(() => AppState.posts.posts),
     };
@@ -59,6 +81,11 @@ export default {
 .rounded {
   height: 50px;
   width: 50px;
+}
+.pimg {
+  justify-content: flex-end;
+  max-height: 100%;
+  max-width: 100%;
 }
 .smol {
   text-align: center;

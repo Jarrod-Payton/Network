@@ -23,3 +23,6 @@ export default {
 <style lang="scss">
 @import "./assets/scss/main.scss";
 </style>
+
+//TODO Ask about refreshing the get all when we add a like
+//TODO Ask why the Appstate new created post doesn't actually unshift
