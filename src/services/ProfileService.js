@@ -6,6 +6,7 @@ class ProfileService {
   async getProfile(id) {
     const res = await api.get('/api/profiles/' + id)
     AppState.profile = res.data
+    logger.log(AppState.profile)
   }
   async editProfile() {
     logger.log('hello')
