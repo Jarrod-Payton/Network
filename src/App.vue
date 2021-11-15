@@ -26,3 +26,5 @@ export default {
 
 //TODO Ask about refreshing the get all when we add a like
 //TODO Ask why the Appstate new created post doesn't actually unshift
+//TODO no reload when delete either
+//TODO ask how to read the timestamps on posts

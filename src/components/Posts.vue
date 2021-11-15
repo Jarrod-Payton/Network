@@ -32,8 +32,9 @@
           </div>
         </div>
         <div class="card-body px-4 pb-4">
-          <h8>{{ p.body }}</h8>
+          <h4>{{ p.body }}</h4>
           <img :src="p.imgUrl" alt="image" v-if="p.imgUrl" class="pimg p-2" />
+          <h6>{{ p.creator.createdAt }}</h6>
         </div>
       </div>
     </div>
