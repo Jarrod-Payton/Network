@@ -24,7 +24,6 @@ export default {
 @import "./assets/scss/main.scss";
 </style>
 
-//TODO Ask about refreshing the get all when we add a like
-//TODO Ask why the Appstate new created post doesn't actually unshift
-//TODO no reload when delete either
+//TODO Ask about refreshing the get all when we add a like or delete or create
 //TODO ask how to read the timestamps on posts
+//TODO ask about Modal
