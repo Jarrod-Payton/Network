@@ -1,7 +1,14 @@
 <template>
   <div class="container">
-    <ProfileHeader />
-    <Posts />
+    <div class="row">
+      <div class="col-10">
+        <ProfileHeader />
+        <Posts />
+      </div>
+      <div class="col-2">
+        <Extra />
+      </div>
+    </div>
   </div>
 </template>
 

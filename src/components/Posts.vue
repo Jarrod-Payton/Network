@@ -34,7 +34,7 @@
         <div class="card-body px-4 pb-4">
           <h4>{{ p.body }}</h4>
           <img :src="p.imgUrl" alt="image" v-if="p.imgUrl" class="pimg p-2" />
-          <h6>{{ p.creator.createdAt }}</h6>
+          <h6>{{ new Date(p.creator.createdAt).toLocaleString() }}</h6>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@ export default {
       },
       user: computed(() => AppState.user),
       Account: computed(() => AppState.account),
-      Posts: computed(() => AppState.posts.posts),
+      Posts: computed(() => AppState.posts),
     };
   },
 };

@@ -6,7 +6,7 @@
     <router-view />
   </main>
   <footer>
-    <Modal />
+    <Modal id="profile-modal" />
   </footer>
 </template>
 

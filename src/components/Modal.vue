@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" tabindex="-1" id="profile-modal">
+  <div class="modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
