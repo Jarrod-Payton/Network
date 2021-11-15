@@ -29,3 +29,4 @@ export default {
 //TODO Ask about refreshing the get all when we add a like or delete or create
 //TODO ask how to read the timestamps on posts
 //TODO ask about Modal
+//TODO ask about pop.confirm
