@@ -1,10 +1,10 @@
 <template>
   <div class="row">
     <div class="col-12" v-for="p in Posts" :key="p.id">
-      <div class="card m-1 elevation-2">
+      <div class="card m-2 elevation-2">
         <div class="card-title px-3 pt-3">
           <div class="d-flex justify-content-between">
-            <h5>
+            <h5 @click="routeTo(p.creatorId)" class="selectable">
               <img
                 class="rounded-circle rounded"
                 :src="p.creator.picture"
@@ -47,12 +47,16 @@ import { onMounted } from "@vue/runtime-core";
 import { postsService } from "../services/PostsService";
 import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
+import { router } from "../router";
 export default {
   setup() {
-    onMounted(async () => {
-      postsService.getAll();
-    });
     return {
+      routeTo(id) {
+        router.push({
+          name: "Profile",
+          params: { id: id },
+        });
+      },
       async likePost(post) {
         try {
           postsService.likePost(post);

@@ -15,8 +15,15 @@
 </template>
 
 <script>
+import { onMounted } from "@vue/runtime-core";
+import { postsService } from "../services/PostsService";
 export default {
-  name: "Home",
+  setup() {
+    onMounted(async () => {
+      postsService.getAll();
+    });
+    return {};
+  },
 };
 </script>
 
